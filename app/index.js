@@ -1,4 +1,7 @@
 // one thing need to tuseday is review gpt maded sample code
+// notion/local에서 ML/DL with RN 살펴보기
+// 메이아이 회사 괜찮아 보임
+// 엑소디오?
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View , Image} from 'react-native';
 import * as ImagePicker from 'expo-image-picker'
