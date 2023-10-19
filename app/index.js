@@ -1,12 +1,13 @@
+// one thing need to tuseday is review gpt maded sample code
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View , Image} from 'react-native';
 import * as ImagePicker from 'expo-image-picker'
 import { useState } from 'react';
 
-import Button from './components/Butten';
-import ImageViewer from './components/ImageViewr';
+import Button from '../components/Butten';
+import ImageViewer from '../components/ImageViewr';
 
-const PlaceholderImage = require('./assets/images/background-image.png')
+const PlaceholderImage = require('../assets/images/background-image.png')
 
 export default function App() {
   const [selectedImage, setSelectedImage] = useState(null)
