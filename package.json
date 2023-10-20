@@ -1,7 +1,7 @@
 {
   "name": "imagecaptioning",
   "version": "1.0.0",
-  "main": "node_modules/expo/AppEntry.js",
+  "main": "app/index.js",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
@@ -9,15 +9,24 @@
     "web": "expo start --web"
   },
   "dependencies": {
-    "expo": "~49.0.13",
-    "expo-status-bar": "~1.6.0",
-    "react": "18.2.0",
-    "react-native": "0.72.5",
-    "react-dom": "18.2.0",
-    "react-native-web": "~0.19.6",
-    "@expo/webpack-config": "^19.0.0",
     "@expo/vector-icons": "^13.0.0",
-    "expo-image-picker": "~14.3.2"
+    "@expo/webpack-config": "^19.0.0",
+    "@react-native-async-storage/async-storage": "^1.19.3",
+    "@tensorflow/tfjs": "^4.12.0",
+    "@tensorflow/tfjs-react-native": "^0.8.0",
+    "@xenova/transformers": "^2.6.2",
+    "expo": "~49.0.13",
+    "expo-camera": "*",
+    "expo-gl": "*",
+    "expo-gl-cpp": "*",
+    "expo-image-picker": "~14.3.2",
+    "expo-status-bar": "~1.6.0",
+    "jpeg-js": "^0.4.4",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-native": "0.72.5",
+    "react-native-fs": "*",
+    "react-native-web": "~0.19.6"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"
