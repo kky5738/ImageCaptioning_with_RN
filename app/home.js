@@ -1,12 +1,13 @@
-// import {registerRootComponent} from 'expo'
 import React, { useState } from 'react';
 import {
   SafeAreaView,
+  View,
   Text,
   Button,
   Image,
   ActivityIndicator,
 } from 'react-native';
+
 import * as ImagePicker from 'expo-image-picker'; // Import the library
 import * as tf from "@tensorflow/tfjs"
 import {fetch} from "@tensorflow/tfjs-react-native"
@@ -16,11 +17,7 @@ import { pipeline } from '@xenova/transformers';
 
 const pipe = await pipeline('image-to-text', 'Xenova/vit-gpt2-image-captioning');
 
-const HuggingFaceAPIEndpoint = 'YOUR_HUGGING_FACE_API_ENDPOINT';
-const APIKey = 'YOUR_API_KEY';
-
-// export default function ImageCaptionApp() {
-export default function ImageCaptionApp() {
+const Home = () => {
   const [image, setImage] = useState('');
   const [caption, setCaption] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -45,18 +42,6 @@ export default function ImageCaptionApp() {
       alert('User cancelled image picker')
     }
     
-
-
-    // ImagePicker.showImagePicker(options, (response) => {
-    //   if (response.didCancel) {
-    //     console.log('User cancelled image picker');
-    //   } else if (response.error) {
-    //     console.log('ImagePicker Error: ', response.error);
-    //   } else {
-    //     // Set the selected image URI
-    //     setImageURI(response.uri);
-    //   }
-    // });
   };
 
   const generateCaption = async () => {
@@ -69,21 +54,8 @@ export default function ImageCaptionApp() {
 
     try {
 
-      // // Prepare the data to send to the API
-      // const data = {
-      //   image_url: image,
-      // };
-
       const imageTensor = await imageToTensor(image)
       const caption = await pipe(imageTensor)
-
-      
-      // // Send a POST request to the Hugging Face API
-      // const response = await axios.post(HuggingFaceAPIEndpoint, data, {
-      //   headers: {
-      //     Authorization: `Bearer ${APIKey}`,
-      //   },
-      // });
 
       
 
@@ -143,7 +115,21 @@ export default function ImageCaptionApp() {
   }
 
   return (
-    <SafeAreaView>
+    <View>
+      <Stack.Screen
+        options={{
+          // https://reactnavigation.org/docs/headers#setting-the-header-title
+          title: 'My home',
+          // https://reactnavigation.org/docs/headers#adjusting-header-styles
+          headerStyle: { backgroundColor: '#f4511e' },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+          // https://reactnavigation.org/docs/headers#replacing-the-title-with-a-custom-component
+        }}
+      />
+
       {image ? (
         <Image source={{ uri: image }} style={{ width: 224, height: 224 }} />
       ) : null}
@@ -155,8 +141,8 @@ export default function ImageCaptionApp() {
       ) : (
         <Text>{caption}</Text>
       )}
-    </SafeAreaView>
+    </View>
   );
 }
 
-// registerRootComponent(ImageCaptionApp)
+export default Home

@@ -2,7 +2,7 @@ import { Stack } from "expo-router";
 import {useFonts} from "expo-font"
 
 export const unstable_settings = {
-    initialRouteName: "ImageCaption",
+    initialRouteName: "home",
 };
 
 const Layout = () => {
@@ -14,8 +14,8 @@ const Layout = () => {
     if (!fontsLoaded) { return null}
 
     return (
-        <Stack initialRouteName="ImageCaption">
-            <Stack.Screen name="ImageCaption"/>
+        <Stack initialRouteName="home">
+            <Stack.Screen name="home"/>
         </Stack>
     )
 }
