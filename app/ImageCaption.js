@@ -1,4 +1,4 @@
-import {registerRootComponent} from 'expo'
+// import {registerRootComponent} from 'expo'
 import React, { useState } from 'react';
 import {
   SafeAreaView,
@@ -20,7 +20,7 @@ const HuggingFaceAPIEndpoint = 'YOUR_HUGGING_FACE_API_ENDPOINT';
 const APIKey = 'YOUR_API_KEY';
 
 // export default function ImageCaptionApp() {
-function ImageCaptionApp() {
+export default function ImageCaptionApp() {
   const [image, setImage] = useState('');
   const [caption, setCaption] = useState('');
   const [isLoading, setIsLoading] = useState(false);
