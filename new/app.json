@@ -1,0 +1,25 @@
+{
+  "expo": {
+    "name": "serve-ml",
+    "slug": "serve-ml",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "web": {
+      "favicon": "./assets/icon.png"
+    },
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "The app accesses your photos to let AI generate caption of your image",
+          "cameraPermission": "The app accesses your camera"
+        }
+      ]
+    ]
+  }
+}

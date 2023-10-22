@@ -1,0 +1,16 @@
+node_modules/
+.expo/
+backend/venv/
+backend/app/__pycache__/
+/package-lock.json
+/.gitattributes
+web-build/
+backend/test/
+Google-Cloud-Platform-Sidecar/
+yarn.lock
+
+# macOS
+.DS_Store
+
+# Temporary files created by Metro to check the health of the file watcher
+.metro-health-check*
